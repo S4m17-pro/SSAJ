@@ -29,21 +29,12 @@ public class GestorPedidos {
         return instancia;
     }
 
-    // Guarda un pedido en el historial con formato detallado.
     public void guardarPedido(String descripcion, double precio) {
         contadorPedidos++;
         totalVentas += precio;
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
-        String registro = String.format("PEDIDO #%04d | %s | %s | %s",
-                contadorPedidos, timestamp, descripcion, String.format("%.2f", precio));
+        String registro = "PEDIDO #" + String.format("%04d", contadorPedidos) + " | " + timestamp + " | " + descripcion + " | " + precio;
         historialPedidos.add(registro);
-
-        System.out.println();
-        System.out.println("PEDIDO REGISTRADO EXITOSAMENTE");
-        System.out.println("Pedido #" + String.format("%04d", contadorPedidos));
-        System.out.println("Fecha: " + timestamp);
-        System.out.println("Total: " + String.format("%.2f", precio));
-        System.out.println();
     }
 
     public void mostrarHistorial() {
@@ -67,7 +58,7 @@ public class GestorPedidos {
             }
 
             System.out.println();
-            System.out.println("INGRESOS TOTALES: " + String.format("%.2f", totalVentas));
+            System.out.println("INGRESOS TOTALES: " + totalVentas);
         }
 
         System.out.println();
