@@ -1,6 +1,6 @@
 import core.ComponenteCarro;
 import core.CarroBase;
-import decorators.BateriaLargaDuracion;
+import decorators.BateriaLargaDuracion; 
 import decorators.PilotoAutonomo;
 import decorators.RinesDeportivos;
 import services.GestorPedidos;
